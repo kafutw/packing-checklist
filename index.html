@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>外出攜帶清單</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTgwIj48cmVjdCB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgZmlsbD0iI0YyRURFOCIvPjxyZWN0IHg9IjMwIiB5PSI2OCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSI4OCIgcng9IjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzNDMzczMyIgc3Ryb2tlLXdpZHRoPSI5Ii8+PHJlY3QgeD0iNjIiIHk9IjUwIiB3aWR0aD0iNTYiIGhlaWdodD0iMjIiIHJ4PSI2IiBmaWxsPSJub25lIiBzdHJva2U9IiMzQzM3MzMiIHN0cm9rZS13aWR0aD0iOCIvPjxsaW5lIHgxPSI5MCIgeTE9IjY4IiB4Mj0iOTAiIHkyPSIxNTYiIHN0cm9rZT0iIzNDMzczMyIgc3Ryb2tlLXdpZHRoPSI4Ii8+PGxpbmUgeDE9IjMwIiB5MT0iMTEyIiB4Mj0iMTUwIiB5Mj0iMTEyIiBzdHJva2U9IiMzQzM3MzMiIHN0cm9rZS13aWR0aD0iOCIvPjxyZWN0IHg9IjY4IiB5PSIxMDQiIHdpZHRoPSI0NCIgaGVpZ2h0PSIxNiIgcng9IjMiIGZpbGw9IiNGMkVERTgiIHN0cm9rZT0iIzNDMzczMyIgc3Ryb2tlLXdpZHRoPSI2Ii8+PC9zdmc+Cg==">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACrElEQVR4nO3cO3LbMBRAUTqT1THrDdfkRo1WkAXE10UiUgB4TunCA4HXjx+P+PF8fG7wlR9f/hTEwXfEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRykn9sS9v3XNpjj+L1NboXJMWAZ26irulccIx+DfeC1rR/H+Lu/D7/CNeOYZd/3Sda5VBycTRwkcbD6c45BHjDs015efMnkIImDJA6SOEjiIImDO93KLnY/+UYmB0kcpI/n43O7ioE/1yPgi+KQxYyJXHFaUcaku3p6HMqYd2/PjUMZZzt1h92t8I44jI1rnLfPJgdJHAz2v5XRvipYk/kYaZ3Xn6ZNDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SF41+cpfdYz09cn/t9rkeO97H/a13jqxVBwjHJt9gDW8ylJx8FriYLAL0pVm78KfbsG7lYtvH/ZVUvib0wpJHCRxkMTBXS9IF75avIDJwT3eQzrInDhW+XQmB/eIY4T/mB8DrOFVlorj7cfmWKiMNe9W/uEITfHu8+utNjl4IXGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQvGpyhXWexOQgiYN3xHHzr6hf5rx9Njl4UxyGx9lO3eHTJ4c+5t3bK04r+ph0Vz+ej8/tKjd/bDDdH9ulcTAXdyskcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcbCVP7q1Zo/ZCXOKAAAAAElFTkSuQmCC">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="外出攜帶清單">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Helvetica Neue',Arial,sans-serif;background:#F2EDE8;min-height:100vh;padding:2rem 1rem}
+.wrap{background:#F2EDE8;max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+.title{font-size:22px;font-weight:400;color:#3C3733;letter-spacing:.06em}
+.subtitle{font-size:15px;color:#9C9188;margin-top:4px;margin-bottom:1.5rem;letter-spacing:.03em}
+.divider{height:1px;background:#D8D0C8;margin-bottom:1.5rem}
+.wizard{display:flex;flex-direction:column;gap:1.5rem}
+.q-label{font-size:15px;color:#6B6259;margin-bottom:10px;letter-spacing:.05em;text-transform:uppercase}
+.q-sub{font-size:13px;color:#B8AFA6;margin-bottom:10px;margin-top:-6px}
+.q-options{display:flex;flex-wrap:wrap;gap:6px}
+.q-opt{padding:9px 20px;border:1px solid #C8BFB6;background:transparent;color:#6B6259;cursor:pointer;font-size:15px;letter-spacing:.03em;transition:all .15s;user-select:none}
+.q-opt:hover{border-color:#3C3733;color:#3C3733}
+.q-opt.selected{background:#3C3733;color:#F2EDE8;border-color:#3C3733}
+.q-block{transition:opacity .2s}
+.q-block.dimmed{opacity:.3;pointer-events:none}
+.start-btn{margin-top:.5rem;padding:14px;border:1px solid #3C3733;background:#3C3733;color:#F2EDE8;font-size:15px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;width:100%;transition:all .15s}
+.start-btn:hover{background:#2A2522}
+.start-btn:disabled{background:transparent;color:#C8BFB6;border-color:#C8BFB6;cursor:not-allowed}
+.checklist-view{display:none}
+.back-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#9C9188;cursor:pointer;margin-bottom:1.5rem;background:none;border:none;padding:0;letter-spacing:.04em;text-transform:uppercase}
+.back-btn:hover{color:#3C3733}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.25rem}
+.tag{padding:5px 13px;border:1px solid #C8BFB6;color:#9C9188;font-size:13px;letter-spacing:.05em;text-transform:uppercase}
+.toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.progress-label{font-size:14px;color:#9C9188;letter-spacing:.03em}
+.progress-bar{height:1px;background:#D8D0C8;margin-bottom:1.5rem}
+.progress-fill{height:100%;background:#3C3733;transition:width .3s}
+.reset-btn{padding:5px 14px;border:1px solid #C8BFB6;background:transparent;color:#9C9188;cursor:pointer;font-size:13px;letter-spacing:.05em;text-transform:uppercase}
+.reset-btn:hover{border-color:#3C3733;color:#3C3733}
+.category{padding-bottom:1.5rem;margin-bottom:1.5rem;border-bottom:1px solid #E0D8D0}
+.category:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.cat-header{font-size:13px;color:#B8AFA6;padding:2px 0 10px;display:flex;align-items:center;gap:6px;text-transform:uppercase;letter-spacing:.1em}
+.cat-header i{font-size:15px}
+.cat-header .cat-count{margin-left:auto;font-size:13px;color:#C8BFB6}
+.cat-items{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+@media(max-width:480px){.cat-items{grid-template-columns:1fr}}
+.item{display:flex;align-items:center;gap:10px;padding:10px 8px;border:1px solid transparent;cursor:pointer;transition:background .1s}
+.item:hover{background:#EAE4DC}
+.item.checked{background:#EAE4DC}
+.item.checked .item-label{color:#B8AFA6;text-decoration:line-through;text-decoration-color:#C8BFB6}
+.item input[type=checkbox]{accent-color:#3C3733;width:16px;height:16px;flex-shrink:0}
+.item-label{font-size:16px;color:#3C3733;letter-spacing:.02em}
+.item.full{grid-column:1/-1}
+.item.sub{grid-column:1/-1;margin-left:16px;border-left:1px solid #C8BFB6;padding-left:12px}
+.item.sub .item-label{font-size:14px;color:#9C9188}
+.item.sub.checked .item-label{color:#C8BFB6}
+.item.sub input[type=checkbox]{width:14px;height:14px}
+.item.todo{grid-column:1/-1;margin-left:16px;border-left:1px solid #B8A882;padding-left:12px}
+.item.todo .item-label{font-size:14px;color:#8C7D55}
+.item.todo input[type=checkbox]{accent-color:#8C7D55;width:14px;height:14px}
+.item.todo.checked .item-label{color:#C8BFB6;text-decoration:line-through;text-decoration-color:#B8A882}
+.item.todo.checked{background:#EDE8DC}
+.submit-area{margin-top:2rem;padding-top:1.5rem;border-top:1px solid #D8D0C8}
+.submit-btn{width:100%;padding:14px;border:1px solid #3C3733;background:#3C3733;color:#F2EDE8;font-size:15px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .15s}
+.submit-btn:hover{background:#2A2522}
+.history-title{font-size:15px;color:#6B6259;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem}
+.history-entry{padding:1rem 0;border-bottom:1px solid #E0D8D0}
+.history-entry:last-child{border-bottom:none}
+.history-date{font-size:13px;color:#9C9188;letter-spacing:.04em;margin-bottom:6px}
+.history-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px}
+.history-tag{font-size:11px;padding:3px 10px;border:1px solid #C8BFB6;color:#9C9188;letter-spacing:.04em}
+.history-items{font-size:13px;color:#6B6259;line-height:2}
+.history-checked{color:#3C3733}
+.history-unchecked{color:#C8BFB6;text-decoration:line-through}
+.tab-row{display:flex;gap:0;margin-bottom:1.5rem}
+.tab{padding:10px 20px;border:1px solid #C8BFB6;background:transparent;color:#9C9188;cursor:pointer;font-size:13px;letter-spacing:.06em;text-transform:uppercase;flex:1;text-align:center}
+.tab.active{background:#3C3733;color:#F2EDE8;border-color:#3C3733}
+.tab:not(:last-child){border-right:none}
+.empty-history{font-size:14px;color:#B8AFA6;text-align:center;padding:2rem 0;letter-spacing:.04em}
+.success-banner{background:#EAE4DC;border:1px solid #C8BFB6;padding:1rem 1.25rem;margin-bottom:1.5rem;display:none}
+.success-banner p{font-size:14px;color:#6B6259;letter-spacing:.03em}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">外出攜帶清單</div>
+  <div class="subtitle">回答幾個問題，整理這次需要帶的東西</div>
+  <div class="divider"></div>
+
+  <div class="tab-row">
+    <div class="tab active" onclick="switchTab('checklist-tab')">清單</div>
+    <div class="tab" onclick="switchTab('history-tab')">出行記錄</div>
+  </div>
+
+  <div id="checklist-tab">
+    <div class="wizard" id="wizard">
+      <div class="q-block">
+        <div class="q-label">1 — 這次是哪種出行？</div>
+        <div class="q-options" id="q-dest">
+          <div class="q-opt" data-val="trip">國內</div>
+          <div class="q-opt" data-val="overseas">出國</div>
+        </div>
+      </div>
+      <div class="q-block">
+        <input id="trip-name" type="text" placeholder="行程名稱（選填）" style="width:100%;padding:10px 0;border:none;border-bottom:1px solid #D8D0C8;background:transparent;font-size:15px;color:#3C3733;outline:none;letter-spacing:.03em">
+      </div>
+      <div class="q-block">
+        <div class="q-label">2 — 有拍攝工作嗎？</div>
+        <div class="q-options" id="q-photo">
+          <div class="q-opt" data-val="yes">有</div>
+          <div class="q-opt" data-val="no">沒有</div>
+        </div>
+      </div>
+      <div class="q-block dimmed" id="qb-drone">
+        <div class="q-label">3 — 需要帶空拍機嗎？</div>
+        <div class="q-sub">選「有拍攝工作」後才適用</div>
+        <div class="q-options" id="q-drone">
+          <div class="q-opt" data-val="yes">需要</div>
+          <div class="q-opt" data-val="no">不需要</div>
+        </div>
+      </div>
+      <div class="q-block dimmed" id="qb-lights">
+        <div class="q-label">4 — 需要帶燈包嗎？</div>
+        <div class="q-sub">選「有拍攝工作」後才適用</div>
+        <div class="q-options" id="q-lights">
+          <div class="q-opt" data-val="yes">需要</div>
+          <div class="q-opt" data-val="no">不需要</div>
+        </div>
+      </div>
+      <div class="q-block dimmed" id="qb-backup">
+        <div class="q-label">5 — 帶備用相機（ZV-E10）嗎？</div>
+        <div class="q-sub">選「有拍攝工作」後才適用</div>
+        <div class="q-options" id="q-backup">
+          <div class="q-opt" data-val="yes">帶</div>
+          <div class="q-opt" data-val="no">不帶</div>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-label">7 — 這次怎麼移動？</div>
+        <div class="q-options" id="q-drive">
+          <div class="q-opt" data-val="own_car">開自己的車</div>
+          <div class="q-opt" data-val="rent_car">租車</div>
+          <div class="q-opt" data-val="none">全部搭車</div>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-label">8 — 有搭台鐵／高鐵嗎？</div>
+        <div class="q-options" id="q-train">
+          <div class="q-opt" data-val="yes">有</div>
+          <div class="q-opt" data-val="no">沒有</div>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-label">9 — 有游泳行程嗎？</div>
+        <div class="q-options" id="q-swim">
+          <div class="q-opt" data-val="yes">有</div>
+          <div class="q-opt" data-val="no">沒有</div>
+        </div>
+      </div>
+      <button class="start-btn" id="start-btn" disabled onclick="buildChecklist()">產生清單</button>
+      <button class="start-btn" style="background:transparent;color:#9C9188;border-color:#C8BFB6;margin-top:0" onclick="buildAll()">全部列出（不篩選情境）</button>
+    </div>
+
+    <div class="checklist-view" id="checklist-view">
+      <button class="back-btn" onclick="goBack()"><i class="ti ti-arrow-left"></i> 重新選擇</button>
+      <div class="success-banner" id="success-banner"><p></p></div>
+      <div class="success-banner" id="resume-banner" style="display:none"><p>↩ 已恢復上次未完成的清單</p></div>
+      <div class="tags" id="tags"></div>
+      <div class="toolbar">
+        <div class="progress-label" id="progress-label">0 / 0 已確認</div>
+        <button class="reset-btn" onclick="resetAll()">重設</button>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+      <div id="checklist"></div>
+      <div class="submit-area">
+        <button class="submit-btn" onclick="submitRecord()">送出並記錄</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="history-tab" style="display:none">
+    <div class="history-title">出行記錄</div>
+    <div id="history-list"></div>
+  </div>
+</div>
+
+<script>
+const CATS={
+  essential:{label:'基本必帶',icon:'ti-wallet'},
+  clothes:{label:'衣物',icon:'ti-shirt'},
+  hygiene:{label:'盥洗用品',icon:'ti-droplet'},
+  sleep:{label:'睡眠用品',icon:'ti-moon'},
+  main_camera:{label:'主相機（Sony A7M4）',icon:'ti-camera'},
+  backup_camera:{label:'備用相機（ZV-E10）',icon:'ti-camera-plus'},
+  drone_cat:{label:'空拍機',icon:'ti-drone'},
+  lights_cat:{label:'燈光器材',icon:'ti-bulb'},
+  health:{label:'醫藥保健',icon:'ti-first-aid-kit'},
+  overseas:{label:'出國專用',icon:'ti-plane'},
+  drive:{label:'開車／租車',icon:'ti-car'},
+  swim:{label:'游泳',icon:'ti-ripple'},
+  computer:{label:'電腦設備',icon:'ti-device-laptop'},
+  train:{label:'搭車專用',icon:'ti-train'}
+};
+const BASE_ITEMS=[
+  {id:1,label:'手機',cat:'essential',tags:['trip','overseas','photo','drive','swim']},
+  {id:2,label:'錢包',cat:'essential',tags:['trip','overseas','photo','drive','swim']},
+  {id:3,label:'鑰匙',cat:'essential',tags:['trip','overseas','photo','drive','swim']},
+  {id:4,label:'行動電源',cat:'essential',tags:['trip','overseas','photo']},
+  {id:5,label:'充電線',cat:'essential',tags:['trip','overseas','photo']},
+  {id:6,label:'耳機',cat:'essential',tags:['trip','overseas']},
+  {id:7,label:'內褲',cat:'clothes',tags:['trip','overseas','swim']},
+  {id:8,label:'上衣',cat:'clothes',tags:['trip','overseas']},
+  {id:9,label:'褲子',cat:'clothes',tags:['trip','overseas']},
+  {id:10,label:'襪子',cat:'clothes',tags:['trip','overseas']},
+  {id:42,label:'髒衣服袋',cat:'clothes',tags:['trip','overseas']},
+  {id:39,label:'壓縮袋',cat:'clothes',tags:['trip','overseas'],hasChild:true},
+  {id:40,label:'抽氣幫浦',cat:'clothes',tags:['trip','overseas'],sub:true},
+  {id:11,label:'洗面乳',cat:'hygiene',tags:['trip','overseas']},
+  {id:12,label:'牙刷',cat:'hygiene',tags:['trip','overseas']},
+  {id:13,label:'牙膏',cat:'hygiene',tags:['trip','overseas']},
+  {id:11.5,label:'擦臉紙巾',cat:'hygiene',tags:['trip','overseas']},
+  {id:14,label:'刮鬍刀',cat:'hygiene',tags:['trip','overseas'],hasChild:true},
+  {id:14.1,label:'刮鬍泡',cat:'hygiene',tags:['trip','overseas'],sub:true},
+  {id:15,label:'耳塞',cat:'sleep',tags:['trip','overseas']},
+  {id:17,label:'棉被',cat:'sleep',tags:['own_car','rent_car']},
+  {id:16,label:'枕頭',cat:'sleep',tags:['trip','overseas']},
+  {id:18,label:'Sony A7M4',cat:'main_camera',tags:['photo'],hasChild:true},
+  {id:43,label:'充電線',cat:'main_camera',tags:['photo'],sub:true},
+  {id:43.5,label:'充電座',cat:'essential',tags:['trip','overseas']},
+  {id:44,label:'電池',cat:'main_camera',tags:['photo'],sub:true},
+  {id:22,label:'記憶卡',cat:'main_camera',tags:['photo','drone']},
+  {id:51,label:'讀卡機',cat:'main_camera',tags:['photo']},
+  {id:19,label:'ZV-E10',cat:'backup_camera',tags:['backup']},
+  {id:20,label:'空拍機',cat:'drone_cat',tags:['drone'],hasChild:true},
+  {id:45,label:'確認電池是否已充電',cat:'drone_cat',tags:['drone'],todo:true},
+  {id:46,label:'記憶卡是否已放入機上',cat:'drone_cat',tags:['drone'],todo:true},
+  {id:21,label:'空拍機電池',cat:'drone_cat',tags:['drone']},
+  {id:23,label:'燈光器材',cat:'lights_cat',tags:['lights']},
+  {id:24,label:'防蚊液',cat:'health',tags:['trip','overseas']},
+  {id:25,label:'鼻噴劑歐治鼻舒敏',cat:'health',tags:['trip','overseas']},
+  {id:27,label:'防曬乳',cat:'health',tags:['trip','overseas']},
+  {id:28,label:'護照',cat:'overseas',tags:['overseas']},
+  {id:29,label:'機票/訂位資料',cat:'overseas',tags:['overseas']},
+  {id:30,label:'電源轉接頭',cat:'overseas',tags:['overseas']},
+  {id:31,label:'當地現金',cat:'overseas',tags:['overseas']},
+  {id:32,label:'行車記錄器',cat:'drive',tags:['own_car']},
+  {id:33,label:'駕照',cat:'drive',tags:['own_car','rent_car']},
+  {id:34,label:'停車費零錢',cat:'drive',tags:['own_car']},
+  {id:35,label:'租車確認資料',cat:'drive',tags:['rent_car']},
+  {id:47,label:'保冷袋',cat:'drive',tags:['own_car','rent_car'],hasChild:true},
+  {id:48,label:'順便好市多購物',cat:'drive',tags:['own_car','rent_car'],todo:true},
+  {id:49,label:'iPad',cat:'drive',tags:['own_car','rent_car'],hasChild:true},
+  {id:50,label:'記得先充電',cat:'drive',tags:['own_car','rent_car'],todo:true},
+  {id:36,label:'泳褲',cat:'swim',tags:['swim']},
+  {id:37,label:'泳鏡',cat:'swim',tags:['swim']},
+  {id:38,label:'毛巾',cat:'swim',tags:['swim']},
+  {id:54,label:'MacBook Air',cat:'computer',tags:['trip','overseas'],hasChild:true},
+  {id:55,label:'充電線',cat:'computer',tags:['trip','overseas'],sub:true},
+  {id:56,label:'有線耳機（選帶）',cat:'computer',tags:['trip','overseas']},
+  {id:57,label:'車票／訂票確認',cat:'train',tags:['train']},
+  {id:58,label:'耳機',cat:'train',tags:['train']},
+  {id:59,label:'薄外套',cat:'train',tags:['train']},
+];
+
+const labelMap={trip:'國內旅行',overseas:'出國',photo:'拍攝工作',drone:'空拍機',lights:'燈包',backup:'備用相機',own_car:'開自己的車',rent_car:'租車',train:'搭台鐵／高鐵',swim:'游泳'};
+const answers={dest:null,photo:null,drone:null,lights:null,backup:null,drive:null,train:null,swim:null};
+let activeItems=[],activeTags=[];
+const STORAGE_KEY='packing_history';
+
+function switchTab(id){
+  document.getElementById('checklist-tab').style.display=id==='checklist-tab'?'block':'none';
+  document.getElementById('history-tab').style.display=id==='history-tab'?'block':'none';
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',(i===0&&id==='checklist-tab')||(i===1&&id==='history-tab')));
+  if(id==='history-tab') renderHistory();
+}
+
+function setupQ(groupId,key){
+  document.getElementById(groupId).addEventListener('click',e=>{
+    const opt=e.target.closest('.q-opt');
+    if(!opt)return;
+    document.querySelectorAll('#'+groupId+' .q-opt').forEach(o=>o.classList.remove('selected'));
+    opt.classList.add('selected');
+    answers[key]=opt.dataset.val;
+    if(key==='photo'){
+      const isPhoto=opt.dataset.val==='yes';
+      document.getElementById('qb-drone').classList.toggle('dimmed',!isPhoto);
+      document.getElementById('qb-lights').classList.toggle('dimmed',!isPhoto);
+      if(!isPhoto){answers.drone='no';answers.lights='no';answers.backup='no';document.querySelectorAll('#q-drone .q-opt,#q-lights .q-opt,#q-backup .q-opt').forEach(o=>o.classList.remove('selected'));}
+      else{answers.drone=null;answers.lights=null;answers.backup=null;}
+      document.getElementById('qb-backup').classList.toggle('dimmed',!isPhoto);
+    }
+    checkReady();
+  });
+}
+
+function checkReady(){document.getElementById('start-btn').disabled=!Object.values(answers).every(v=>v!==null);}
+
+function buildAll(){
+  activeTags=['trip','overseas','photo','drone','lights','backup','own_car','rent_car','swim'];
+  activeItems=BASE_ITEMS.map(i=>({...i,checked:false}));
+  document.getElementById('tags').innerHTML='<span class="tag">全部項目</span>';
+  document.getElementById('wizard').style.display='none';
+  document.getElementById('success-banner').style.display='none';
+  document.getElementById('checklist-view').style.display='block';
+  render();
+  saveProgress();
+}
+
+function buildChecklist(){
+  activeTags=[answers.dest];
+  if(answers.photo==='yes') activeTags.push('photo');
+  if(answers.drone==='yes') activeTags.push('drone');
+  if(answers.lights==='yes') activeTags.push('lights');
+  if(answers.backup==='yes') activeTags.push('backup');
+  if(answers.drive==='own_car') activeTags.push('own_car');
+  if(answers.drive==='rent_car') activeTags.push('rent_car');
+  if(answers.train==='yes') activeTags.push('train');
+  if(answers.swim==='yes') activeTags.push('swim');
+  activeItems=BASE_ITEMS.filter(i=>i.tags.some(t=>activeTags.includes(t))).map(i=>({...i,checked:false}));
+  document.getElementById('tags').innerHTML=activeTags.map(t=>'<span class="tag">'+labelMap[t]+'</span>').join('');
+  document.getElementById('wizard').style.display='none';
+  document.getElementById('success-banner').style.display='none';
+  document.getElementById('checklist-view').style.display='block';
+  render();
+  saveProgress();
+}
+
+function goBack(){
+  clearProgress();
+  document.getElementById('wizard').style.display='flex';
+  document.getElementById('checklist-view').style.display='none';
+}
+
+function render(){
+  const total=activeItems.length,done=activeItems.filter(i=>i.checked).length;
+  document.getElementById('progress-label').textContent=done+' / '+total+' 已確認';
+  document.getElementById('progress-fill').style.width=(total?(done/total*100):0)+'%';
+  const cl=document.getElementById('checklist');cl.innerHTML='';
+  const usedCats=[...new Set(activeItems.map(i=>i.cat))];
+  usedCats.forEach(k=>{
+    const m=CATS[k],ci=activeItems.filter(i=>i.cat===k),dc=ci.filter(i=>i.checked).length;
+    const div=document.createElement('div');div.className='category';
+    div.innerHTML='<div class="cat-header"><i class="ti '+m.icon+'"></i>'+m.label+'<span class="cat-count">'+dc+'/'+ci.length+'</span></div><div class="cat-items" id="c-'+k+'"></div>';
+    cl.appendChild(div);
+    const grid=div.querySelector('#c-'+k);
+    ci.forEach(item=>{
+      const el=document.createElement('label');
+      let cls='item'+(item.checked?' checked':'');
+      if(item.todo) cls+=' todo';
+      else if(item.sub) cls+=' sub';
+      else if(item.hasChild) cls+=' full';
+      el.className=cls;
+      el.innerHTML='<input type="checkbox"'+(item.checked?' checked':'')+' onchange="toggle('+item.id+')"><span class="item-label">'+item.label+'</span>';
+      grid.appendChild(el);
+    });
+  });
+}
+
+const PROGRESS_KEY='packing_progress';
+
+function saveProgress(){
+  localStorage.setItem(PROGRESS_KEY,JSON.stringify({
+    activeTags,
+    activeItems,
+    tripName:document.getElementById('trip-name').value.trim(),
+    answers:{...answers}
+  }));
+}
+
+function clearProgress(){localStorage.removeItem(PROGRESS_KEY);}
+
+function restoreProgress(){
+  const saved=JSON.parse(localStorage.getItem(PROGRESS_KEY)||'null');
+  if(!saved||!saved.activeItems||!saved.activeItems.length) return;
+  activeTags=saved.activeTags;
+  activeItems=saved.activeItems;
+  if(saved.tripName) document.getElementById('trip-name').value=saved.tripName;
+  Object.assign(answers,saved.answers);
+  document.getElementById('tags').innerHTML=activeTags.map(t=>'<span class="tag">'+( labelMap[t]||t)+'</span>').join('');
+  document.getElementById('wizard').style.display='none';
+  document.getElementById('success-banner').style.display='none';
+  document.getElementById('checklist-view').style.display='block';
+  const resume=document.getElementById('resume-banner');
+  if(resume) resume.style.display='block';
+  render();
+}
+
+function toggle(id){const i=activeItems.find(x=>x.id===id);if(i)i.checked=!i.checked;render();saveProgress();}
+function resetAll(){activeItems.forEach(i=>i.checked=false);render();saveProgress();}
+
+function submitRecord(){
+  const now=new Date();
+  const pad=n=>String(n).padStart(2,'0');
+  const dateStr=now.getFullYear()+'/'+pad(now.getMonth()+1)+'/'+pad(now.getDate())+' '+pad(now.getHours())+':'+pad(now.getMinutes());
+  const tripName=document.getElementById('trip-name').value.trim();
+  const record={date:dateStr,name:tripName,tags:[...activeTags],items:activeItems.map(i=>({label:i.label,checked:i.checked,sub:!!i.sub,todo:!!i.todo}))};
+  const history=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');
+  history.unshift(record);
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(history));
+  clearProgress();
+  const banner=document.getElementById('success-banner');
+  banner.querySelector('p').textContent='已記錄 — '+dateStr;
+  banner.style.display='block';
+  window.scrollTo(0,0);
+}
+
+function renderHistory(){
+  const list=document.getElementById('history-list');
+  const history=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');
+  if(!history.length){list.innerHTML='<div class="empty-history">尚無出行記錄</div>';return;}
+  list.innerHTML=history.map((r,idx)=>
+    '<div class="history-entry">'+
+    '<div style="display:flex;align-items:center;justify-content:space-between">'+
+    '<div class="history-date">'+r.date+(r.name?' · '+r.name:'')+'</div>'+
+    '<button onclick="deleteRecord('+idx+')" style="font-size:12px;color:#B8AFA6;background:none;border:none;cursor:pointer;letter-spacing:.04em;text-transform:uppercase">刪除</button>'+
+    '</div>'+
+    '<div class="history-tags">'+r.tags.map(t=>'<span class="history-tag">'+(labelMap[t]||t)+'</span>').join('')+'</div>'+
+    '<div class="history-items">'+r.items.filter(i=>!i.sub&&!i.todo).map(i=>'<span class="'+(i.checked?'history-checked':'history-unchecked')+'" style="display:inline-block;margin-right:12px">'+(i.checked?'✓ ':'')+i.label+'</span>').join('')+'</div>'+
+    '</div>'
+  ).join('');
+}
+
+function deleteRecord(idx){
+  const history=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');
+  history.splice(idx,1);
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(history));
+  renderHistory();
+}
+
+setupQ('q-dest','dest');setupQ('q-photo','photo');setupQ('q-drone','drone');setupQ('q-lights','lights');setupQ('q-backup','backup');setupQ('q-drive','drive');setupQ('q-train','train');setupQ('q-swim','swim');
+restoreProgress();
+</script>
+</body>
+</html>
