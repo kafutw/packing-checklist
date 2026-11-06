@@ -374,7 +374,7 @@ function restoreProgress(){
   const saved=JSON.parse(localStorage.getItem(PROGRESS_KEY)||'null');
   if(!saved||!saved.activeItems||!saved.activeItems.length) return;
   activeTags=saved.activeTags;
-  activeItems=saved.activeItems;
+  activeItems=saved.activeItems.filter(i=>BASE_ITEMS.some(b=>b.id===i.id));
   if(saved.tripName) document.getElementById('trip-name').value=saved.tripName;
   Object.assign(answers,saved.answers);
   document.getElementById('tags').innerHTML=activeTags.map(t=>'<span class="tag">'+( labelMap[t]||t)+'</span>').join('');
