@@ -414,7 +414,7 @@ function renderHistory(){
     '<div class="history-entry">'+
     '<div style="display:flex;align-items:center;justify-content:space-between">'+
     '<div class="history-date">'+r.date+(r.name?' · '+r.name:'')+'</div>'+
-    '<button onclick="deleteRecord('+idx+')" style="font-size:15px;color:#B8AFA6;background:none;border:none;cursor:pointer;letter-spacing:.04em;text-transform:uppercase">刪除</button>'+
+    '<button onclick="deleteRecord('+idx+')" style="font-size:15px;color:#B8AFA6;background:none;border:none;cursor:pointer;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;margin-left:8px">刪除</button>'+
     '</div>'+
     '<div class="history-tags">'+r.tags.map(t=>'<span class="history-tag">'+(labelMap[t]||t)+'</span>').join('')+'</div>'+
     '<div class="history-items">'+r.items.filter(i=>!i.sub&&!i.todo).map(i=>'<span class="'+(i.checked?'history-checked':'history-unchecked')+'" style="display:inline-block;margin-right:12px">'+(i.checked?'✓ ':'')+i.label+'</span>').join('')+'</div>'+
